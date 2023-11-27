@@ -121,11 +121,11 @@ function app() {
         if (setupGuideContainer.classList.contains("show-guides")) {
             setupGuideContainer.classList.remove("show-guides");
             setupGuideController.setAttribute("aria-expanded", "false");
-            setupGuideBody.setAttribute("aria-hidden", "true");
+            // setupGuideBody.setAttribute("aria-hidden", "true");
         } else {
             setupGuideContainer.classList.add("show-guides");
             setupGuideController.setAttribute("aria-expanded", "true");
-            setupGuideBody.setAttribute("aria-hidden", "false");
+            // setupGuideBody.setAttribute("aria-hidden", "false");
 
             // Ensure it's the first setup guide that's open whenever the list of guides is opened
             openParticularGuide(0);
@@ -316,6 +316,8 @@ function app() {
     // Close trial alert bar
     function closeTrialAlert () {
         trialAlertContainer.classList.add("hide");
+
+        closeTrialAlertBtn.setAttribute("aria-expanded", "false");
     }
 }
 app();

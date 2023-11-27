@@ -236,6 +236,7 @@ body {
     gap: 8px;
     align-items: center;
     border-radius: 8px;
+    text-decoration: none;
     font-size: 13px;
     line-height: 140%;
     font-weight: 400;
@@ -300,6 +301,8 @@ header {
 .searchbar button {
     flex: none;
     border-radius: 6px;
+    width: 20px;
+    height: 20px;
 }
 .searchbar button:focus-visible {
     outline: 2px solid var(--focused-state);
@@ -436,6 +439,9 @@ header {
     color: #00000066;
     font-size: 12px;
     font-weight: 500;
+}
+.store-owner-details {
+    text-decoration: none;
 }
 .owner-contact-details {
     width: 100%;
@@ -593,6 +599,7 @@ progress[value] {
     --bg: #E3E3E3;
     --color: #1A1A1A;
     background: var(--bg);
+    transition: all 250ms ease-in-out;
 }
 progress[value]::-webkit-progress-bar {
   border-radius: 4px;
@@ -671,6 +678,9 @@ progress[value]::-webkit-progress-value {
     border: none;
     outline: none;
     cursor: pointer;
+}
+.guide-checkbox:active {
+    background: #D9D9D9;
 }
 .guide-checkbox:focus-visible {
     outline: 2px solid var(--focused-state);
