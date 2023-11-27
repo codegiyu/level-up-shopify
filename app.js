@@ -193,14 +193,12 @@ function app() {
         // Get length of nodelist of guide checkboxes that are marked completed
         const numOfCompletedGuides = document.querySelectorAll(".guide-checkbox.completed").length;
 
-        // Get percent worth of one single completed guide by dividing 100 by number of guides
-        const PERCENTAGE_OF_SINGLE_CHECKBOX = 100 / guideSingles.length;
-
         // Update span with number of completed guides
         completedGuidesNumEl.innerHTML = numOfCompletedGuides;
 
-        // Update width of progress bar with number of completed guides * percent worth of one complete guide
-        progressBar.style.width = `${numOfCompletedGuides * PERCENTAGE_OF_SINGLE_CHECKBOX}%`;
+        // Update value and aria-valuenow of progress bar with number of completed guides
+        progressBar.value = numOfCompletedGuides;
+        progressBar.ariaValueNow = numOfCompletedGuides;
     }
 
     // Open guide with that index
