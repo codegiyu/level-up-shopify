@@ -442,10 +442,22 @@ header {
 }
 .store-owner-details {
     text-decoration: none;
+    border-radius: 8px;
 }
 .owner-contact-details {
     width: 100%;
     padding: 8px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    text-align: start;
+}
+.owner-contact-details:hover {
+    background: var(--hovered-state);
+}
+.owner-contact-details:active {
+    background: var(--pressed-state);
 }
 #merchant-name {
     font-size: 13px;
@@ -659,6 +671,8 @@ progress[value]::-webkit-progress-value {
 }
 .guide.active-guide {
     background: #F3F3F3;
+    transition: transform 150ms ease-in-out;
+    animation: 150ms 1 slideUp;
 }
 .guide-main {
     width: 100%;
@@ -709,7 +723,6 @@ progress[value]::-webkit-progress-value {
 }
 .guide-checkbox.completed .checkbox-marked {
     display: block;
-    /* background-image: url("https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg"); */
     animation: 200ms 1 checked;
 }
 
@@ -723,12 +736,15 @@ progress[value]::-webkit-progress-value {
     background: transparent;
     border-radius: 6px;
     font-size: 13px;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 140%;
     text-align: start;
     border: none;
     outline: none;
     cursor: pointer;
+}
+.guide.guide.active-guide .guide-controller {
+    font-weight: 600;
 }
 .guide-controller:focus-visible {
     outline: 2px solid var(--focused-state);
@@ -786,5 +802,14 @@ progress[value]::-webkit-progress-value {
     to {
         scale: 100%;
         rotate: 0deg;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(1px);
+    }
+    to {
+        transform: translateY(0);
     }
 }
