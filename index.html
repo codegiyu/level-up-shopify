@@ -8,6 +8,7 @@
 </head>
 <body>
     <header>
+        <!-- Shopify Logo link with mobile and desktop svgs alternatingly hidden -->
         <a href="https://shopify.com">
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" class="mobile-logo">
                 <path d="M21.2105 3.80404C21.2105 3.80404 20.8505 3.90685 20.259 4.08677C20.1561 3.75263 20.0018 3.36709 19.7961 2.95584C19.1274 1.6707 18.1245 0.976727 16.9415 0.976727C16.8644 0.976727 16.7872 0.976727 16.6843 1.00243C16.6586 0.951024 16.6072 0.925321 16.5815 0.873916C16.0671 0.308454 15.3985 0.0514257 14.6013 0.0771285C13.0583 0.128534 11.5152 1.23375 10.2808 3.21287C9.40646 4.60082 8.73782 6.34861 8.55781 7.71086C6.78334 8.25062 5.54893 8.63616 5.52321 8.66187C4.62312 8.9446 4.59741 8.9703 4.49454 9.81849C4.34024 10.4611 2 28.5815 2 28.5815L21.442 31.9486V3.75263C21.3391 3.77833 21.2619 3.77833 21.2105 3.80404ZM16.7101 5.19199C15.6814 5.50042 14.5498 5.86026 13.444 6.1944C13.7526 4.98637 14.3698 3.77833 15.0899 2.98155C15.3728 2.69882 15.7585 2.36468 16.1957 2.15906C16.6329 3.08436 16.7358 4.34379 16.7101 5.19199ZM14.627 1.10524C14.987 1.10524 15.2956 1.18235 15.5528 1.33657C15.1413 1.54219 14.7299 1.87633 14.3441 2.26187C13.3669 3.31568 12.6211 4.96066 12.3125 6.52853C11.3867 6.81126 10.4609 7.094 9.6122 7.35102C10.1523 4.90926 12.2353 1.18235 14.627 1.10524ZM11.6181 15.2418C11.721 16.8868 16.0671 17.2466 16.3243 21.1277C16.5043 24.1864 14.7041 26.2683 12.1067 26.4225C8.96928 26.6281 7.24625 24.7775 7.24625 24.7775L7.91488 21.9502C7.91488 21.9502 9.63792 23.2611 11.0266 23.1583C11.9267 23.1068 12.261 22.3615 12.2353 21.8474C12.1067 19.6884 8.55781 19.8169 8.32635 16.2699C8.12062 13.3141 10.0751 10.3068 14.3955 10.0241C16.0671 9.9213 16.9158 10.3326 16.9158 10.3326L15.9386 14.0338C15.9386 14.0338 14.8327 13.5197 13.5212 13.6225C11.6181 13.751 11.5924 14.9591 11.6181 15.2418ZM17.7387 4.88355C17.7387 4.11247 17.6359 3.00725 17.2758 2.08195C18.4588 2.31327 19.0246 3.62412 19.2817 4.4209C18.8188 4.54942 18.3045 4.70363 17.7387 4.88355Z" fill="white"/>
@@ -27,6 +28,7 @@
             </svg>
         </a>
 
+        <!-- Searchbar -->
         <form class="searchbar">
             <button type="submit" id="search-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -36,6 +38,7 @@
             <input type="search" name="search" id="search" placeholder="Search" class="text-13-medium">
         </form>
 
+        <!-- Dropdown menu buttons -->
         <div class="header-right-group">
             <button id="alerts-btn" aria-haspopup="true" aria-expanded="false" aria-controls="alerts-menu" class="dropdown-menu-controller">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20" fill="none">
@@ -48,6 +51,7 @@
             </button>
         </div>
 
+        <!-- Alerts dropdown -->
         <div 
             id="alerts-menu" 
             class="dropdown-menu-container" 
@@ -78,6 +82,7 @@
             </div>
         </div>
 
+        <!-- Store profile dropdown -->
         <div 
             id="store-profile-menu" 
             class="dropdown-menu-container" 
@@ -156,6 +161,7 @@
 
     <main>
         <section id="trial-alert" class="container">
+            <!-- Trial alert section -->
             <div class="trial-alert-top">
                 <p class="text-light text-13-medium">
                     Extend your trial for $1/month for 3 months on select plans.
@@ -178,7 +184,9 @@
             </div>
         </section>
 
+        <!-- Setup guides section -->
         <section id="setup-guide" class="container show-guides">
+            <!-- Main accordion header -->
             <div class="setup-guide-header">
                 <div class="setup-guide-header-main">
                     <div class="setup-guide-header-main-top">
@@ -187,6 +195,8 @@
                             Use this personalized guide to get your store up and running.
                         </p>
                     </div>
+
+                    <!-- Record of completed guides and progress bar -->
                     <div class="setup-guide-header-main-bottom">
                         <span class="text-12"><span id="completed-guides">0</span> / 5 completed</span>
                         <div class="progress">
@@ -194,6 +204,8 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Toggle button for setup guides section accordion -->
                 <button id="guides-toggle-btn" aria-controls="setup-guide-body" aria-expanded="true">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <g id="Icons">
@@ -202,10 +214,14 @@
                     </svg>                        
                 </button>
             </div>
+
+            <!-- Main accordion body -->
             <ul id="setup-guide-body" aria-labelledby="page-description" aria-hidden="false" data-controller="guides-toggle-btn">
                 <li>
                     <div class="guide active-guide">
+                        <!-- Main part of each single guide -->
                         <div class="guide-main">
+                            <!-- Checkbox for the guide -->
                             <button 
                                 class="guide-checkbox dashed"
                                 id="guide-checkbox-0"
@@ -215,17 +231,24 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="checkbox-border">
                                     <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 28 28" fill="none" class="checkbox-spinner">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 28 28" fill="none" class="checkbox-spinner">
                                     <path
                                     d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
-                                    stroke="#000"
+                                    stroke="#1C181D"
                                     stroke-width="2.5"
                                     stroke-linecap="round"
                                     stroke-linejoin="round"
                                     />
                                 </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="checkbox-marked">
+                                    <circle cx="11.9996" cy="12" r="10" fill="#1C181D" stroke="#1C181D" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.8162 8.64149C17.0603 8.88557 17.0603 9.2813 16.8162 9.52538L11.3995 14.942C11.1555 15.1861 10.7597 15.1861 10.5157 14.942L7.80733 12.2337C7.56325 11.9896 7.56325 11.5939 7.80733 11.3498C8.0514 11.1057 8.44713 11.1057 8.69121 11.3498L10.9576 13.6162L15.9323 8.64149C16.1764 8.39742 16.5721 8.39742 16.8162 8.64149Z" fill="white"/>
+                                </svg>
                             </button>
+
+                            <!-- Guide text content and buttons -->
                             <div class="guide-main-content">
+                                <!-- Single guide button to toggle content -->
                                 <button 
                                     id="guide-controller-0"
                                     class="guide-controller" 
@@ -234,6 +257,8 @@
                                 >
                                     Customize your online store
                                 </button>
+
+                                <!-- Guide description and links/buttons -->
                                 <div id="toggled-content-0" class="toggled-content" aria-labelledby="guide-controller-0">
                                     <p class="text-13-medium">
                                         Choose a theme and add your logo, colors, and images to reflect your brand.
@@ -247,9 +272,11 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="guide-illustration-0" class="guide-illustrations" aria-labelledby="guide-controller-0">
+
+                        <!-- Guide illustration (desktop only) -->
+                        <figure id="guide-illustration-0" class="guide-illustrations" aria-labelledby="guide-controller-0">
                             <img src="https://crushingit.tech/hackathon-assets/customise-store.png" alt="">
-                        </div>
+                        </figure>
                     </div>
                 </li>
                 <li>
@@ -264,14 +291,18 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="checkbox-border">
                                     <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 28 28" fill="none" class="checkbox-spinner">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 28 28" fill="none" class="checkbox-spinner">
                                     <path
                                     d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
-                                    stroke="#000"
+                                    stroke="#1C181D"
                                     stroke-width="2.5"
                                     stroke-linecap="round"
                                     stroke-linejoin="round"
                                     />
+                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="checkbox-marked">
+                                    <circle cx="11.9996" cy="12" r="10" fill="#1C181D" stroke="#1C181D" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.8162 8.64149C17.0603 8.88557 17.0603 9.2813 16.8162 9.52538L11.3995 14.942C11.1555 15.1861 10.7597 15.1861 10.5157 14.942L7.80733 12.2337C7.56325 11.9896 7.56325 11.5939 7.80733 11.3498C8.0514 11.1057 8.44713 11.1057 8.69121 11.3498L10.9576 13.6162L15.9323 8.64149C16.1764 8.39742 16.5721 8.39742 16.8162 8.64149Z" fill="white"/>
                                 </svg>
                             </button>
                             <div class="guide-main-content">
@@ -299,9 +330,9 @@
                                 </div aria-labelledby="guide-controller-1">
                             </div>
                         </div>
-                        <div id="guide-illustration-1" class="guide-illustrations">
+                        <figure id="guide-illustration-1" class="guide-illustrations">
                             <img src="https://crushingit.tech/hackathon-assets/product.png" alt="">
-                        </div>
+                        </figure>
                     </div>
                 </li>
                 <li>
@@ -316,14 +347,18 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="checkbox-border">
                                     <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 28 28" fill="none" class="checkbox-spinner">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 28 28" fill="none" class="checkbox-spinner">
                                     <path
                                     d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
-                                    stroke="#000"
+                                    stroke="#1C181D"
                                     stroke-width="2.5"
                                     stroke-linecap="round"
                                     stroke-linejoin="round"
                                     />
+                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="checkbox-marked">
+                                    <circle cx="11.9996" cy="12" r="10" fill="#1C181D" stroke="#1C181D" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.8162 8.64149C17.0603 8.88557 17.0603 9.2813 16.8162 9.52538L11.3995 14.942C11.1555 15.1861 10.7597 15.1861 10.5157 14.942L7.80733 12.2337C7.56325 11.9896 7.56325 11.5939 7.80733 11.3498C8.0514 11.1057 8.44713 11.1057 8.69121 11.3498L10.9576 13.6162L15.9323 8.64149C16.1764 8.39742 16.5721 8.39742 16.8162 8.64149Z" fill="white"/>
                                 </svg>
                             </button>
                             <div class="guide-main-content">
@@ -348,9 +383,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="guide-illustration-2" class="guide-illustrations" aria-labelledby="guide-controller-2">
+                        <figure id="guide-illustration-2" class="guide-illustrations" aria-labelledby="guide-controller-2">
                             <img src="https://crushingit.tech/hackathon-assets/website.png" alt="">
-                        </div>
+                        </figure>
                     </div>
                 </li>
                 <li>
@@ -365,14 +400,18 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="checkbox-border">
                                     <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 28 28" fill="none" class="checkbox-spinner">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 28 28" fill="none" class="checkbox-spinner">
                                     <path
                                     d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
-                                    stroke="#000"
+                                    stroke="#1C181D"
                                     stroke-width="2.5"
                                     stroke-linecap="round"
                                     stroke-linejoin="round"
                                     />
+                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="checkbox-marked">
+                                    <circle cx="11.9996" cy="12" r="10" fill="#1C181D" stroke="#1C181D" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.8162 8.64149C17.0603 8.88557 17.0603 9.2813 16.8162 9.52538L11.3995 14.942C11.1555 15.1861 10.7597 15.1861 10.5157 14.942L7.80733 12.2337C7.56325 11.9896 7.56325 11.5939 7.80733 11.3498C8.0514 11.1057 8.44713 11.1057 8.69121 11.3498L10.9576 13.6162L15.9323 8.64149C16.1764 8.39742 16.5721 8.39742 16.8162 8.64149Z" fill="white"/>
                                 </svg>
                             </button>
                             <div class="guide-main-content">
@@ -397,9 +436,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="guide-illustration-3" class="guide-illustrations" aria-labelledby="guide-controller-3">
+                        <figure id="guide-illustration-3" class="guide-illustrations" aria-labelledby="guide-controller-3">
                             <img src="https://crushingit.tech/hackathon-assets/name-store.png" alt="">
-                        </div>
+                        </figure>
                     </div>
                 </li>
                 <li>
@@ -414,14 +453,18 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" class="checkbox-border">
                                     <circle cx="12" cy="12" r="10" stroke="#8A8A8A" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"/>
                                 </svg>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 28 28" fill="none" class="checkbox-spinner">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 28 28" fill="none" class="checkbox-spinner">
                                     <path
                                     d="M26 14C26 16.3734 25.2962 18.6935 23.9776 20.6668C22.6591 22.6402 20.7849 24.1783 18.5922 25.0866C16.3995 25.9948 13.9867 26.2324 11.6589 25.7694C9.33114 25.3064 7.19295 24.1635 5.51472 22.4853C3.83649 20.8071 2.6936 18.6689 2.23058 16.3411C1.76755 14.0133 2.00519 11.6005 2.91345 9.4078C3.8217 7.21509 5.35977 5.34094 7.33316 4.02236C9.30655 2.70379 11.6266 2 14 2"
-                                    stroke="#000"
+                                    stroke="#1C181D"
                                     stroke-width="2.5"
                                     stroke-linecap="round"
                                     stroke-linejoin="round"
                                     />
+                                </svg>
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="checkbox-marked">
+                                    <circle cx="11.9996" cy="12" r="10" fill="#1C181D" stroke="#1C181D" stroke-width="2.08333" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.8162 8.64149C17.0603 8.88557 17.0603 9.2813 16.8162 9.52538L11.3995 14.942C11.1555 15.1861 10.7597 15.1861 10.5157 14.942L7.80733 12.2337C7.56325 11.9896 7.56325 11.5939 7.80733 11.3498C8.0514 11.1057 8.44713 11.1057 8.69121 11.3498L10.9576 13.6162L15.9323 8.64149C16.1764 8.39742 16.5721 8.39742 16.8162 8.64149Z" fill="white"/>
                                 </svg>
                             </button>
                             <div class="guide-main-content">
@@ -446,9 +489,9 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="guide-illustration-4" class="guide-illustrations" aria-labelledby="guide-controller-4">
+                        <figure id="guide-illustration-4" class="guide-illustrations" aria-labelledby="guide-controller-4">
                             <img src="https://crushingit.tech/hackathon-assets/payment.png" alt="">
-                        </div>
+                        </figure>
                     </div>
                 </li>
             </ul>

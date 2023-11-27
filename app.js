@@ -160,17 +160,22 @@ function app() {
         }
     }
 
-    // Open the 
+    // Open the guide of the particular guide controller button that was clicked
     function openGuideSingle(e) {
-        closeAllGuides();
+        closeAllGuides(); // First close all guides
 
-        const guideIndex = e.currentTarget.id.slice(-1);
+        // All guide controller and checkbox ids have been suffixed with the index of the guide they are in
+        // Extract index from id by spliting by hyphens and taking the last string in the resulting array
+        const guideIndex = e.currentTarget.id.split("-").at(-1);
 
+        // With the index, target the guide in its nodelist and add "active-guide" class
+        // Set aria-expanded to true for the corresponding checkbox and controller as well
         guideSingles[guideIndex].classList.add("active-guide");
-        guideSingleCheckboxes[guideIndex]?.setAttribute("aria-expanded", "true");
-        guideSingleControllers[guideIndex]?.setAttribute("aria-expanded", "true");
+        guideSingleCheckboxes[guideIndex].setAttribute("aria-expanded", "true");
+        guideSingleControllers[guideIndex].setAttribute("aria-expanded", "true");
     }
 
+    // Close all guides
     function closeAllGuides() {
         guideSingles.forEach(guideSingle => {
             guideSingle.classList.remove("active-guide");
@@ -183,12 +188,22 @@ function app() {
         })
     }
 
+    // Update completed guides and progress bar width
     function handleGuidesProgress() {
+        // Get length of nodelist of guide checkboxes that are marked completed
         const numOfCompletedGuides = document.querySelectorAll(".guide-checkbox.completed").length;
+
+        // Get percent worth of one single completed guide by dividing 100 by number of guides
+        const PERCENTAGE_OF_SINGLE_CHECKBOX = 100 / guideSingles.length;
+
+        // Update span with number of completed guides
         completedGuidesNumEl.innerHTML = numOfCompletedGuides;
-        progressBar.style.width = `${numOfCompletedGuides * 20}%`;
+
+        // Update width of progress bar with number of completed guides * percent worth of one complete guide
+        progressBar.style.width = `${numOfCompletedGuides * PERCENTAGE_OF_SINGLE_CHECKBOX}%`;
     }
 
+    // Open guide with that index
     function openParticularGuide (i) {
         closeAllGuides();
 
@@ -196,51 +211,81 @@ function app() {
         guideSingleCheckboxes[i]?.setAttribute("aria-expanded", "true");
         guideSingleControllers[i]?.setAttribute("aria-expanded", "true");
         
+        // Set focus to checkbox in that guide
         guideSingleCheckboxes[i].focus();
     }
 
+    // Open next incomplete guide (if any)
     function openNextIncompleteGuide () {
+        // Start off guide index at -1 because it can be easily compared with other numbers
         let nextIncompleteGuideIndex = -1;
 
+        // Loop through guide checkboxes
         for(let i = 0; i < guideSingleCheckboxes.length; i++) {
+            // If any guide contains the "dashed" class, it is incomplete
+            // Set nextIncompleteGuideIndex to that index and stop the loop
             if (guideSingleCheckboxes[i].classList.contains("dashed")) {
                 nextIncompleteGuideIndex = i;
                 break;
             }
         }
 
+        // if nextIncompleteGuideIndex is a valid index, open guide with that index
         if (nextIncompleteGuideIndex >= 0) {
             openParticularGuide(nextIncompleteGuideIndex);
         }
     }
 
+    // Handle keypress functionality for escape and arrow keys when any menu is open
     function handleMenuKeyPress (e) {
         const { keyCode } = e;
 
         menuContainers.forEach(menuContainer => {
+
+            // If menu is active
             if (menuContainer.classList.contains("menu-active")) {
+
                 if (keyCode === 27) {
+
+                    // If key is "escape" key close menu and return focus to its controller btn
                     closeMenuAndReturnFocus(menuContainer);
+
                 } else if ([39, 40].includes(keyCode)) {
+
+                    // if key is arrow down or arrow right, move focus to the next focusable element in that menu
                     goToNextFocusableMenuItem(menuContainer);
+
                 } else if ([37, 38].includes(keyCode)) {
+
+                    // if key is arrow left or arrow up, move focus to the previous focusable element in that menu
                     goToPreviousFocusableMenuItem(menuContainer);
                 }
             }
         })
     }
 
+    // Move focus to the next focusable element in an open dropdown menu
     function goToNextFocusableMenuItem(menu) {
+        // Get nodelist of all elements with the class "focusable-menu-item"
         const focusableMenuItems = menu.querySelectorAll(".focusable-menu-item");
+
+        // Start off index of item with current focus at -1 for easy comparison and number operations
         let indexOfFocusedItem = -1;
 
+        // Loop through focusable menu items
         for (let i = 0; i < focusableMenuItems.length; i++) {
+
+            // If any element matches the active element (element that has focus) in that document,
+            // set indexOfFocusedItem to that index and stop the loop
             if (focusableMenuItems[i] === document.activeElement) {
                 indexOfFocusedItem = i;
                 break;
             }
         }
 
+        // If indexOfFocusedItem > the second highest index in focusableMenuItems then set focus to the first focusable item
+        // Else add 1 to indexOfFocusedItem and set focus the item in focusableMenuItems at that index
+        // That way even if no item in the menu originally had focus, the first focusable item would now have focus anyway
         if (indexOfFocusedItem > focusableMenuItems.length - 2) {
             focusableMenuItems[0].focus();
         } else {
@@ -248,6 +293,7 @@ function app() {
         }
     }
 
+    // Move focus to the next focusable element in an open dropdown menu
     function goToPreviousFocusableMenuItem(menu) {
         const focusableMenuItems = menu.querySelectorAll(".focusable-menu-item");
         let indexOfFocusedItem = focusableMenuItems.length;
@@ -259,6 +305,9 @@ function app() {
             }
         }
 
+        // If indexOfFocusedItem <= 0 then set focus to the last focusable item
+        // That way even if no item in the menu originally had focus, the last focusable item would now have focus anyway
+        // Else subtract 1 from indexOfFocusedItem and set focus the item in focusableMenuItems at that index
         if (indexOfFocusedItem <= 0) {
             focusableMenuItems[focusableMenuItems.length - 1].focus();
         } else {
@@ -266,6 +315,7 @@ function app() {
         }
     }
 
+    // Close trial alert bar
     function closeTrialAlert () {
         trialAlertContainer.classList.add("hide");
     }

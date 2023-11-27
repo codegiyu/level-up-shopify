@@ -494,6 +494,9 @@ main {
     background: var(--grey-300);
     border-radius: 0px;
 }
+#trial-alert.hide {
+    display: none;
+}
 .trial-alert-top {
     width: 100%;
     display: flex;
@@ -690,8 +693,9 @@ main {
 .guide-checkbox.loading {
     animation: 350ms infinite spinner;
 }
-.guide-checkbox.completed {
-    background-image: url("https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg");
+.guide-checkbox.completed .checkbox-marked {
+    display: block;
+    /* background-image: url("https://crushingit.tech/hackathon-assets/icon-checkmark-circle.svg"); */
     animation: 200ms 1 checked;
 }
 
@@ -762,11 +766,11 @@ main {
 
 @keyframes checked {
     from {
-        background-size: 30%;
+        scale: 30%;
         rotate: -100deg;
     }
     to {
-        background-size: 100%;
+        scale: 100%;
         rotate: 0deg;
     }
 }
