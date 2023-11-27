@@ -318,7 +318,7 @@ header {
     color: var(--white);
 }
 .searchbar input::placeholder {
-    color: var(--grey-100);
+    color: #B5B5B5;
 }
 
 .header-right-group {
@@ -460,6 +460,9 @@ header {
 }
 
 @media only screen and (min-width: 1024px) {
+    .logowrap {
+        padding-right: 60px;
+    }
     .mobile-logo {
         display: none;
     }
